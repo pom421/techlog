@@ -1,6 +1,6 @@
 import Head from "next/head"
+import Link from "next/link"
 import React from "react"
-// import styles from '../styles/Home.module.css'
 
 import PostsList from "../components/PostsList"
 
@@ -19,6 +19,18 @@ export default function Home() {
 
         <p>
           Get started by editing <code>pages/index.js</code>
+        </p>
+
+        <p>
+          <Link href="/post-page">
+            <a>Go to post page</a>
+          </Link>
+        </p>
+
+        <p>
+          <Link href="/test">
+            <a>Go to test</a>
+          </Link>
         </p>
 
         <PostsList />
