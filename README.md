@@ -14,3 +14,11 @@ git push scalingo master
 
 3. Your app is available under https://techlog.osc-fr1.scalingo.io.
 
+## yarn start in local mode
+
+You must fill the port to start the server.
+
+```bash
+PORT=3131 yarn start
+```
+

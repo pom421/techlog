@@ -1,5 +1,4 @@
 import React from "react"
-import Image from "next/image"
 import styled from "styled-components"
 
 import { theme } from "../theme"
@@ -13,7 +12,7 @@ const Article = styled.article`
   max-width: 50ch;
 `
 
-export default function Post(props) {
+export default function Post() {
   return (
     <>
       <Article>

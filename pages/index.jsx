@@ -37,7 +37,13 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>Made with ❤️ in 2021</p>
+        <p>
+          Made with&nbsp;
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>
+          &nbsp;in 2021
+        </p>
       </footer>
     </div>
   )
