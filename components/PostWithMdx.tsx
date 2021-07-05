@@ -12,7 +12,7 @@ const components = {
 }
 
 export interface PostProps {
-    children: object
+    children: React.ReactNode
 }
 
 const PostWithMdx = (props: PostProps) => {

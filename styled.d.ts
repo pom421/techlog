@@ -5,7 +5,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     borderRadius: string;
 
-    spacing: object;
+    spacing: Record<string, string>;
 
     color: {
       primary: string,
