@@ -1,4 +1,41 @@
-import { DefaultTheme } from 'styled-components';
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+
+const config: ThemeConfig = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
+
+// 2. Define the new text styles
+const theme = extendTheme({
+  config,
+  textStyles: {
+    h1: {
+      // you can also use responsive styles
+      fontSize: ["48px", "72px"],
+      fontWeight: "bold",
+      lineHeight: "110%",
+      letterSpacing: "-2%",
+    },
+    h2: {
+      fontSize: ["36px", "48px"],
+      fontWeight: "semibold",
+      lineHeight: "110%",
+      letterSpacing: "-1%",
+    },
+    colors: {
+      brand: {
+        100: "#f7fafc",
+        // ...
+        900: "#1a202c",
+      },
+    },
+  },
+});
+
+// // 3. Consume the text styles in your component
+// function Example() {
+//   return <Box textStyle="h1">This is a box</Box>
+// }
 
 export const palette = {
   white: "#FFF",
@@ -99,10 +136,9 @@ export const palette = {
     800: "#9D174D",
     900: "#831843",
   },
-}
+};
 
-
-const theme : DefaultTheme = {
+const themeOld = {
   borderRadius: "5px",
   spacing: {
     1: "4px",
@@ -122,5 +158,6 @@ const theme : DefaultTheme = {
     neutral: palette.gray[400],
     text: palette.gray[900],
   },
-}
-export { theme };
+};
+
+export default theme;

@@ -27,12 +27,6 @@ export default function Home() {
           </Link>
         </p>
 
-        <p>
-          <Link href="/test">
-            <a>Go to test</a>
-          </Link>
-        </p>
-
         <PostsList />
       </main>
 

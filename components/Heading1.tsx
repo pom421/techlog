@@ -1,12 +1,16 @@
-import styled from "styled-components"
-
-import {theme} from "../theme"
+import { Heading } from "@chakra-ui/react";
+import React from "react";
 
 export interface Heading1Props {
-  variant?: boolean;
-  children: string;
+  children: React.ReactNode;
 }
 
-export const Heading1 = styled.h1`
-  color: ${(props:Heading1Props) => props.variant ? theme.color.secondary : theme.color.primary}
-`
+export const Heading1 = (props: Heading1Props): JSX.Element => {
+  const { children } = props;
+
+  return (
+    <Heading as="h1" size="4xl" isTruncated>
+      {children}
+    </Heading>
+  );
+};

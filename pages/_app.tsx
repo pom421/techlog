@@ -1,31 +1,23 @@
-import React from "react"
-import type { AppProps    } from 'next/app'
+import React from "react";
+import type { AppProps } from "next/app";
 
-import { createGlobalStyle, DefaultTheme, ThemeProvider } from "styled-components"
+import { ChakraProvider } from "@chakra-ui/react";
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
-    font-size: 16px;
-  }
-`
-
-const theme = {
-  color: {
-    primary: "#0070f3",
+import { extendTheme } from "@chakra-ui/react";
+// 2. Extend the theme to include custom colors, fonts, etc
+const colors = {
+  brand: {
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
   },
-} as DefaultTheme
+};
+const theme = extendTheme({ colors });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  )
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
