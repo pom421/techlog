@@ -9,7 +9,9 @@ function PostsList(props) {
     <>
       <h1>Tous les articles sont "ici"</h1>
       <div>
-        <Post />
+        <Post title="Comment installer Next.js sous Mac OS (the easy way) ?" />
+        <Post title="Everything I Know About Style Guides, Design Systems, and Component Libraries" />
+        <Post title="How Stripe Designs Beautiful Websites" />
       </div>
     </>
   )
