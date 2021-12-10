@@ -1,6 +1,5 @@
 import { SunIcon } from "@chakra-ui/icons";
 import {
-  Button,
   Box,
   HStack,
   useColorModeValue,
@@ -13,7 +12,7 @@ import {
 import * as React from "react";
 
 const Banner = (): JSX.Element => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
 
   return (
     <Box as="section" pt="0" pb="12" width="100%">

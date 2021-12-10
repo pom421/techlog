@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Box,
-  chakra,
-  Container,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Container, Flex, useColorModeValue } from "@chakra-ui/react";
 import Head from "next/head";
 
 import Banner from "../components/Banner";
