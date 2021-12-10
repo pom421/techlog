@@ -1,22 +1,14 @@
 import fs from "fs";
 import matter from "gray-matter";
-// import { Head } from "next/document";
 import Link from "next/link";
 import path from "path";
-import Banner from "../components/Banner";
+import Layout from "../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
 
 export default function Index({ posts }) {
   return (
     <>
-      {/* <Head>
-        <title>Pom's techlog, journey in adventureland</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
- */}
-      <Banner />
-
-      <main>
+      <Layout>
         <p>
           <Link href="/post-page">
             <a>Go to post page</a>
@@ -39,16 +31,7 @@ export default function Index({ posts }) {
             </li>
           ))}
         </ul>
-      </main>
-      <footer>
-        <p>
-          Made with&nbsp;
-          <span role="img" aria-label="heart">
-            ❤️
-          </span>
-          &nbsp;in 2021
-        </p>
-      </footer>
+      </Layout>
     </>
   );
 }

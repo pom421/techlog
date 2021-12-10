@@ -8,6 +8,7 @@ import path from 'path'
 import { Box, Heading, StackDivider, Text, VStack } from "@chakra-ui/react";
 
 import CustomLink from '../../components/CustomLink'
+import Layout from '../../components/Layout'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 
 // Custom components/renderers to pass to MDX.
@@ -30,24 +31,25 @@ export default function PostPage({ source, frontMatter }) {
                 </nav>
             </header>
 
-            <VStack
-                divider={<StackDivider borderColor="gray.200" />}
-                spacing={4}
-                align="stretch"
-            >
-                <Box bg="tomato" p={5} shadow="md" borderWidth="1px">
-                    <Heading fontSize="xl">{frontMatter.title}</Heading>
+            <Layout>
+                <VStack
+                    divider={<StackDivider borderColor="gray.200" />}
+                    spacing={4}
+                    align="stretch"
+                >
+                    <Box bg="tomato" p={5} shadow="md" borderWidth="1px">
+                        <Heading fontSize="xl">{frontMatter.title}</Heading>
 
-                    {frontMatter.description && (
-                        <p className="description">{frontMatter.description}</p>
-                    )}
+                        {frontMatter.description && (
+                            <p className="description">{frontMatter.description}</p>
+                        )}
 
-
-                    <Text mt={4}>
-                        <MDXRemote {...source} components={components} />
-                    </Text>
-                </Box>
-            </VStack>
+                        <Text mt={4}>
+                            <MDXRemote {...source} components={components} />
+                        </Text>
+                    </Box>
+                </VStack>
+            </Layout>
 
 
             <style jsx>{`

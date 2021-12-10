@@ -1,43 +1,6 @@
-import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import { createBreakpoints } from "@chakra-ui/theme-tools";
 
-const config: ThemeConfig = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
-};
-
-// 2. Define the new text styles
-const theme = extendTheme({
-  config,
-  textStyles: {
-    h1: {
-      // you can also use responsive styles
-      fontSize: ["48px", "72px"],
-      fontWeight: "bold",
-      lineHeight: "110%",
-      letterSpacing: "-2%",
-    },
-    h2: {
-      fontSize: ["36px", "48px"],
-      fontWeight: "semibold",
-      lineHeight: "110%",
-      letterSpacing: "-1%",
-    },
-    colors: {
-      brand: {
-        100: "#f7fafc",
-        // ...
-        900: "#1a202c",
-      },
-    },
-  },
-});
-
-// // 3. Consume the text styles in your component
-// function Example() {
-//   return <Box textStyle="h1">This is a box</Box>
-// }
-
-export const palette = {
+const palette = {
   white: "#FFF",
   black: "#000",
   gray: {
@@ -138,26 +101,36 @@ export const palette = {
   },
 };
 
-const themeOld = {
-  borderRadius: "5px",
-  spacing: {
-    1: "4px",
-    2: "8px",
-    3: "12px",
-    4: "16px",
-    5: "24px",
-    6: "32px",
-    7: "48px",
-    8: "64px",
-    9: "96px",
+const tokens = {
+  breakpoints: createBreakpoints({
+    sm: "30em",
+    md: "48em",
+    lg: "64rem",
+    xl: "80rem",
+    "2xl": "96em",
+  }),
+  sizes: {
+    container: {
+      xl: "1400px",
+      lg: "1024px",
+      md: "768px",
+      sm: "640px",
+    },
   },
-  color: {
-    secondary: palette.green[400],
-    primary: palette.blue[600],
-    warning: palette.red[800],
-    neutral: palette.gray[400],
-    text: palette.gray[900],
+  colors: {
+    ...palette,
+    primary: {
+      50: "#f8f8fd",
+      100: "#f0f0fa",
+      200: "#dadaf3",
+      300: "#c3c4ec",
+      400: "#9698de",
+      500: "#696cd0",
+      600: "#5f61bb",
+      700: "#4f519c",
+      800: "#3f417d",
+      900: "#333566",
+    },
   },
 };
-
-export default theme;
+export default tokens;
