@@ -1,6 +1,6 @@
 {
     // Set to false for editor.formatOnSave to let work source.fixAll.eslint
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
