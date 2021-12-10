@@ -5,6 +5,8 @@ import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
+import { Box, Heading, StackDivider, Text, VStack } from "@chakra-ui/react";
+
 import CustomLink from '../../components/CustomLink'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 
@@ -27,15 +29,26 @@ export default function PostPage({ source, frontMatter }) {
                     </Link>
                 </nav>
             </header>
-            <div className="post-header">
-                <h1>{frontMatter.title}</h1>
-                {frontMatter.description && (
-                    <p className="description">{frontMatter.description}</p>
-                )}
-            </div>
-            <main>
-                <MDXRemote {...source} components={components} />
-            </main>
+
+            <VStack
+                divider={<StackDivider borderColor="gray.200" />}
+                spacing={4}
+                align="stretch"
+            >
+                <Box bg="tomato" p={5} shadow="md" borderWidth="1px">
+                    <Heading fontSize="xl">{frontMatter.title}</Heading>
+
+                    {frontMatter.description && (
+                        <p className="description">{frontMatter.description}</p>
+                    )}
+
+
+                    <Text mt={4}>
+                        <MDXRemote {...source} components={components} />
+                    </Text>
+                </Box>
+            </VStack>
+
 
             <style jsx>{`
         .post-header h1 {
