@@ -1,5 +1,7 @@
+import { mode } from "@chakra-ui/theme-tools";
+
 const styles = {
-  global: {
+  global: (props) => ({
     "@font-face": [
       {
         fontFamily: "Cabin",
@@ -18,21 +20,16 @@ const styles = {
           " url('gabriela-v8-latin-regular.woff') format('woff')",
       },
     ],
-    "html, body, #root": {
-      height: "100%",
-    },
     body: {
       fontFamily: '"Cabin", -apple-system, sans-serif',
       fontWeight: "normal",
       color: "gray.700",
-    },
-    "#root": {
-      background: "linear-gradient(#eff0fa,#fff)",
+      background: mode("white", "gray.800")(props),
     },
     a: {
-      color: "primary.500",
+      color: mode("blue.400", "red.300")(props),
     },
-  },
+  }),
 };
 
-export { styles };
+export default styles;

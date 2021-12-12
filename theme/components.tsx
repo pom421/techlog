@@ -50,4 +50,4 @@ const components = {
   },
 };
 
-export { components };
+export default components;

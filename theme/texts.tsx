@@ -1,4 +1,12 @@
 const textStyles = {
+  "first-title": {
+    // you can also use responsive styles
+    fontSize: ["48px", "58px"],
+    fontWeight: "bold",
+    lineHeight: "110%",
+    letterSpacing: "-2%",
+    color: "tomato",
+  },
   h1: {
     // you can also use responsive styles
     fontSize: ["48px", "72px"],
@@ -11,7 +19,8 @@ const textStyles = {
     fontWeight: "semibold",
     lineHeight: "110%",
     letterSpacing: "-1%",
+    color: "red.400",
   },
 };
 
-export { textStyles };
+export default textStyles;

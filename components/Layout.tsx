@@ -1,16 +1,8 @@
 import React from "react";
-import { Box, Container, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Container, Flex, useColorModeValue } from "@chakra-ui/react";
 import Head from "next/head";
 
-import Banner from "../components/Banner";
-
-function Header() {
-  return (
-    <Box>
-      <header>PixelDragon in JS adventureLand and pump it up!</header>
-    </Box>
-  );
-}
+import Header from "./Header";
 
 function Footer() {
   return (
@@ -30,27 +22,27 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <>
       <Head>
-        <title>Pom's techlog, journey in adventureland</title>
+        <title>Adventureland</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Flex
-        direction="column"
-        align="center"
-        justify="center"
-        minH="100vh"
-        bg={useColorModeValue("gray.200", "gray.600")}
-      >
-        <Banner />
+      <Container maxW="container.lg">
+        <Flex
+          direction="column"
+          align="center"
+          justify="center"
+          minH="100vh"
+          bg={useColorModeValue("gray.200", "gray.600")}
+        >
+          <Header />
 
-        <Header />
+          <main role="main" style={{ flexGrow: 1 }}>
+            <Container>{children}</Container>
+          </main>
 
-        <main role="main" style={{ flexGrow: 1 }}>
-          <Container>{children}</Container>
-        </main>
-
-        <Footer />
-      </Flex>
+          <Footer />
+        </Flex>
+      </Container>
     </>
   );
 }
