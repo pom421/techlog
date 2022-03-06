@@ -35,7 +35,7 @@ const Header = (): JSX.Element => {
           <Link as={NextLink} href="/">
             Article
           </Link>
-          <Link as={NextLink} href="a-propos">
+          <Link as={NextLink} href="/a-propos">
             À propos
           </Link>
           <IconButton

@@ -12,7 +12,7 @@ function Footer() {
         <span role="img" aria-label="heart">
           ❤️
         </span>
-        &nbsp;in 2021
+        &nbsp;in 2022
       </p>
     </footer>
   );
@@ -26,23 +26,25 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container maxW="container.lg">
-        <Flex
-          direction="column"
-          align="center"
-          justify="center"
-          minH="100vh"
-          bg={useColorModeValue("gray.200", "gray.600")}
-        >
+      <Flex
+        direction="column"
+        align="center"
+        justify="center"
+        minH="100vh"
+        bg={useColorModeValue("gray.200", "gray.600")}
+      >
+        <Container maxW="container.lg">
           <Header />
+        </Container>
 
-          <main role="main" style={{ flexGrow: 1 }}>
-            <Container>{children}</Container>
-          </main>
+        <main role="main" style={{ flexGrow: 1 }}>
+          <Container maxW="container.md">{children}</Container>
+        </main>
 
+        <Container maxW="container.lg" textAlign="center">
           <Footer />
-        </Flex>
-      </Container>
+        </Container>
+      </Flex>
     </>
   );
 }
