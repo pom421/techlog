@@ -16,8 +16,8 @@ import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-    a: CustomLink,
-    Head,
+    a: CustomLink, Head,
+    h2: props => <Text as="h2" color="red.600" {...props} my="6" fontSize="lg" />
 }
 
 export default function PostPage({ source, frontMatter }) {
@@ -37,7 +37,7 @@ export default function PostPage({ source, frontMatter }) {
                     spacing={4}
                     align="stretch"
                 >
-                    <Box bg="tomato" p={5} shadow="md" borderWidth="1px">
+                    <Box p={5} shadow="md" borderWidth="1px">
                         <Heading fontSize="xl">{frontMatter.title}</Heading>
 
                         {frontMatter.description && (
